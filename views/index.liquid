@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dire="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+</head>
+
+<body>
+    <div class="container">
+    <h1>Pokemon Index</h1> 
+    <h5><a href="/pokemon/new">Add new Pokemon</a></h5>
+        <div class="pokemonContainer">
+        {% for pokemon in pokemon %}
+        <div>
+           <h3> <a id="pokemonName" href="/pokemon/{{ forloop.index0}}"> <strong>{{pokemon.name}}</strong> </h3>
+            </br>    
+            <img src="{{pokemon.img}}" alt="wut" height="200" width="200"></a>
+        </br>
+
+        
+        
+        <form method="POST" action="/pokemon/{{ forloop.index0}}?_method=DELETE">
+            <input type="submit" value="DELETE">
+            
+            <a id="edit" href="/pokemon/{{forloop.index0}}/edit">Edit</a>
+        </form>  
+    </div>
+    {% endfor %}
+    </div>
+</div>
+</body>
+
+</html>

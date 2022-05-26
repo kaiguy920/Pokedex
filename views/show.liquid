@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="/app.css"> -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <title>Pokemon info</title>
+</head>
+<body>
+    <div class="container">
+    <h1>{{pokemon.name}}</h1>
+    <img src="{{pokemon.img}}" alt="wut">
+    <h3>Type</h3>
+    <ul>
+        {% for type in pokemon.type %}
+        <li>{{type}}</li>
+        {% endfor %}
+        </ul>
+
+    <h3>Stats</h3>
+    <ul>
+        {% for stats in pokemon.stats %}
+        <li>{{stats[0]}}: {{stats[1]}}</li>
+        {% endfor %}
+        </ul>
+
+    <a href="/pokemon/">Back to Pokedex</a>
+    <br>
+
+</div>
+</body>
+
+</html>
